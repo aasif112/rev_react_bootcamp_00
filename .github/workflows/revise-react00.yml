@@ -1,20 +1,37 @@
+#This is a basic workflow to help you get started with Actions
+# Give a name to the action
+
 name: Auto Deploy Changes
+# Action will be triggered on push action on main-branch 
+on: 
+  push:
+    branches: [main]
 
-on: push
-
+# A workflow run is made up of one or more jobs that run sequentially or in parallel
 jobs:
-  build:
-    runs-on: ubuntu-latest
+   #This workflow contains a single job called “build”
+   build:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+# This will create a virtual operating system
+# Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    steps:
-    - uses: actions/checkout@v3
+# Run a single or multiple commands using the runner shell
+    # Installing NodeJS 
+      - name: Installing NodeJS 
+        uses: actions/setup-node@v2-beta
+        with:
+             node-version: 20
 
-    - name: Installing Node
-      uses: actions/setup-node@v2-beta
-      with:
-          node-version: 20
-          
-    - name: Installing surge
-      run: npm install --global surge
-    - name: Deploy using surge
-      run: surge ./ previous-statement.surge.sh --token $ {{ secrets.SURGE_TOKEN }}
+    # Installing surge
+      - name: Installing Surge
+        run: npm install --global surge
+    # run surge to deploy
+      - name: Deploying on surge
+        run: surge ./ learn_react_revise00.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      
+      # run: surge ./           | "surge" means- to-deploy & "./" -current-directory
+      # --token ${{secrets.SURGE_TOKEN}} token generated with the name SURGE_TOKEN
