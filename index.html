@@ -6,24 +6,62 @@
     <title>revise_react_00</title>
 
 
-
-
 </head>
+
 <body>
     <h1>Learning React from Bootcamp 2020</h1>
-    <p>This is revision of classes</p>
-    <br />
-    <h2>A git-repo is made</h2>
-    <p>A git repo is made repo Name: <strong>react_bootcamp_00</strong></p>
-    <p>repo link: </p>
-    <br />
-    <h2>index.html file made</h2>
-    <p>index.html file made and pushed on github</p>
-    <br />
-    <h2>Surge.sh: push the project on surge.sh</h2>
-    <p>surge.sh is a hosting where we can host statict websites.</p>
-    <br />
-    <h2>surge install:</h2>
+    <h2>Making Development Setup</h2>
+    <ul>
+        <div>
+        <a href="#project-initial">
+            <li>Make a simple HTML file / project</li>
+            <li>Make a github repo of the file-directory</li>
+        </a>
+        </div>
+
+        <div>
+            <a href="#surge-deploy">
+                <li>Deploy project on Surge.sh</li>
+            </a>
+            <ul>
+                <li>Surge set-up/ installation</li>
+                <li>Deploy on surge</li>
+                <li>Updated project and then depoly</li>
+                <li>More about surge</li>
+            </ul>
+        </div>
+
+        <div>
+            <a href="#github-workflow">
+                <li>Github repo workflow</li>
+            </a>
+            <li>Add a contributor in the Repo</li>
+            <li>Auto update workflow</li>
+                <ul>
+                    <li>Make a yml-file</li>
+                    <li>Make a secrete key</li>
+                </ul>
+        </div>
+
+        <div>
+            <a href="#final-checking">
+                <li>Update and push project</li>
+            </a>
+        </div>
+    </ul>
+
+    <br /> 
+    <hr />
+    <h2 id="project-initial">Initializing Project: </h2>
+    <p>index.html file made</p>
+    <h2>Making git repo</h2>
+    <p>A git repo is made repo Name: <a target="_blank" href="https://github.com/aasif112/rev_react_bootcamp_00.git"> <strong>rev_react_bootcamp_00</strong> </a></p>
+
+    
+    <br />  
+    <hr />
+    <h2 id="surge-deploy">Deploying on surge:</h2>
+    <h3>surge installation</h3>
     <p>before installing surge install node.js</p>
     <p>To check if node.js is installed </p>
         <div class="code">
@@ -33,18 +71,29 @@
         <br />
         <code>node </code>
         </div>
-    <h2>surge install command</h2>
+    <h3>surge install command</h3>
         <div class="code">
             <code>npm install --global surge</code>
-            <br />
-            <code></code>
         </div>
-    <h2>Deploying on surge:</h2>
+
+    <h3>Deploy on surge.sh</h3>
+    
     <p>Deploy project or file on surge</p>
-        <div class="code"><code>surge "project/file-directory"</code></div>
+        <div class="code">
+            <code>surge "project/file-directory"</code>
+        </div>
         <br />
         <img src="./images/surge0.png" alt="surge-deploy">
-    <p>Now a custumized domain name appears.</p>
+
+    <p>Or deploy current directory by command</p>
+    <div class="code">
+        <code>surge ./</code>
+    </div>
+    <h3>First time Deploying</h3>
+    <p>Give email and password</p>
+
+    <h3>Alredy login in surge</h3>
+    <p>A defaul domain name appears.</p>
     <p>You can edit initial part of the domain</p>
         <img src="./images/surge1.png" alt="surge-domain-name">
 
@@ -52,17 +101,13 @@
         <img src="./images/surge2.png" alt="surge-deploy-success">
     <br />
     <p>This page is deployed on: <a target="_blank" href="https:/learn_react_revise00.surge.sh">learn_react_revise00.surge.sh</a></p>
+
     <br />
-    <p>More surge instructions: &emsp; &emsp;
-        <a target="_blank" href="https://surge.sh/help/remembering-a-domain">surge guide</a>
-    </p>
+    <hr />
+    <h2>Update and Deploy on surge.sh</h2>
     <p>If we make any change in project in local system it wont be updated on the server.</p>
     <p>If you open the link it will show previous page which was deployed.</p>
-   
-    
-    <br />
-    <h2>Making update and Deploy that:</h2>
-    <p>There are two methods:</p>
+    <p>There are two methods to deploy the updates made in project on surge</p>
         <ul>
             <li>
                 <h3>surge --domain same-domain-name</h3>
@@ -92,11 +137,19 @@
         </ul>
 
     <br />
-    <h2>Making github workflow:</h2>
+    <hr />
+    <h2>More about surge</h2>
+    <p>More surge instructions: &emsp; &emsp;
+        <a target="_blank" href="https://surge.sh/help/remembering-a-domain">surge guide</a>
+    </p>
+    
+   
+    
+    <br />
+    <hr />
+    <h2 id="github-workflow">Making github workflow:</h2>
     <p>We can make changes and push on github</p>
     <p>We make a workflow which will Deploy any update / change on surge server as we push on github.</p>
-
-    <h4>---------  After github workflow  -----------</h4>
     <p>To make an workflow </p>
         <ul>
             <li>Go to github repo-action</li>
@@ -107,13 +160,17 @@
              </p>
             <li>Therefore create a secrate Key and write that in your yml-code file.</li>
         </ul>    
+
+
+    <br />
+    <hr />
+    <h3 id="final-checking"> Final update 
+        Date: 29/11/2024 4:10 </h3>
+    
     
    
    
   
-   
-    <br />
-    <h2></h2>
 
 
 
