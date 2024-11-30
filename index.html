@@ -151,16 +151,31 @@
     <h2 id="github-workflow">Making github workflow:</h2>
     <p>We can make changes and push on github</p>
     <p>We make a workflow which will Deploy any update / change on surge server as we push on github.</p>
-    <p>To make an workflow </p>
-        <ul>
-            <li>Go to github repo-action</li>
-            <li>Make a yml-file</li>
-            <li>make a action code in yml-file</li>
-            <p>You need a authentication token from surge to deploy the changes through github (a new system) <br />
-                It is not good to keep that token open in yml-file
-             </p>
-            <li>Therefore create a secret Key and write that in your yml-code file.</li>
-        </ul>    
+
+    <h3>
+        Creating a github action-workflow mean
+    </h3>
+        <p>A "function" will start as we perform an github-action.</p>
+        <p>This "function" here will be the auto-deploying of updated project on surge.sh</p>
+        <p>The github-action may be push /pull_request or another action that we set in the code.</p>
+        <h3>To create a github action-workflow</h3>
+        <ul>Go to github-repo actions
+            <li>- set up a workflow</li>
+            <li>- you will reach at main.yml file</li>
+            <li>- you may change the name: project-one.yml</li>
+            <li>- then code the yml file and commit.</li>
+        </ul>
+            <h3>yml-file code explained:</h3>
+
+
+        <p>You need a authentication token from surge to deploy the changes through github (a new system) 
+        <br />
+            It is not good to keep that token open in yml-file code because repo is public
+        </p>
+        <p>
+            Therefore create a secret Key and write that in your yml-code file.
+        </p>
+
         <h3>GitHub workflow created</h3>
         <p>A github workflow is created now as we make changes/ updates that will be deployed on surge through git hub.</p>
         <p>Updates will be deployed as:</p>
