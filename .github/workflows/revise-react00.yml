@@ -6,6 +6,7 @@ name: Auto Deploy Changes
 on: 
   push:
     branches: [main]
+  pull_request:
 
 
 # A workflow run is made up of one or more jobs that run sequentially or in parallel
