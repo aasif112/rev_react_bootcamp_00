@@ -1,0 +1,58 @@
+Creating a github action-workflow mean
+A "function" will start as we perform an github-action.
+This "function" here will be the auto-deploying of updated project on surge.sh
+The github-action may be push /pull_request or another action that we set in the code.
+
+To create a github action-workflow 
+ - go to github-repo actions
+	- set up a workflow
+	- you will reach at main.yml file
+	- you may change the name: project-one.yml
+	- then code the yml file and commit.
+- yml-file code explained:
+
+--------------------------------------------- YML CODE -----------------------------------------------
+
+#This is a basic workflow to help you get started with Actions
+
+name: Auto Deploy Surge		#| Give-your-name
+
+# Controls when the action wil run. Triggers the workflow on push or pull request events but only for the master branch
+on:
+	push:
+		branches: [master]      #| Action will be triggered on push-action on master-branch
+	pull_request:
+		branches: [master]      #| Action will be triggered on push_request on master-branch
+
+# A workflow run is made up of one or more jobs that run sequentially or in parallel
+# Now the following procedures will run one by one. These procedures we explain in jobs
+jobs:
+	# This workflow contain a single job called “build”
+	build:				#|It will build a virtual system
+      	# The type of runner that the job will run on
+      	runs-on: ubuntu-latest		#|The virtual system will run on : ubuntu/window/macOS operating system
+   	# A virtual system will be created the the following steps will run one by one on that system
+      
+	# Steps represent a sequence of tasks that will be executed as part of the job
+	steps:
+	# Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it	
+	- uses: actions/checkout@v2		#|some action/work built by github we can use that.
+	
+	# Run a single or multiple commands using runner shell
+	- name: Install NodeJS 			#|name of the action/step we give. We have to install nodeJs we name that first
+	 uses: actions/setup-node@v2-beta	#| a buil-in action to install nodeJS in github.
+	 with:
+		node-version: 20
+
+	#| we are required to install surge to deploy the project
+	- name: Installing surge
+	 run: npm install --global surge	#| no built-in action provided by github therefore using run command
+	
+	#| After installing we use commands to deploy.
+	- name: Deploy using surge
+	 run:  surge ./ name-where-deploy-surge.sh --token ${{secrets.SURGE_TOKEN}}      
+	
+	#| "surge" + "./" + "domain-name-surge.sh" + "--token" + "${{secrets.SURGE_TOKEN}}"
+	#| "surge" = to-deploy   "./" = current-directory  
+	#|"--token" = we have to provide token to allow surge to deploy changes through git. "${{secrets.SURGE_TOKEN}}" = token made secret through git.
+ 
